@@ -1,0 +1,22 @@
+<div class="detail-container" *ngIf="todoForm">
+    <mat-card>
+      <mat-card-title>Edit Todo</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="todoForm" (ngSubmit)="updateTodo()">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+          <button mat-raised-button color="accent" type="submit">Update Todo</button>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="deleteTodo()">Delete Todo</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
